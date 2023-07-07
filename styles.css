@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik&display=swap');
+
+:root {
+    --form-section-size: calc(100vw - var(--branding-section));
+    --branding-section: 45vw;
+    --title-container: #000000aa;
+    --font-color: #efefef;
+    --background-color: #efefef;
+    --form-background: #e8e8e8;
+    --btn-color: #012E40;
+    --btn-hover-state: #024959;
+    --border-color: #ababab;
+    --log-in-color: #3CA6A6;
+    --log-in-hover-state: #026773;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#main {
+    height: 100%;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FORM SECTION START */
+
+.form-container {
+    width: var(--form-section-size);
+}
+
+#form-section {
+    height: calc(100% - 30vh);
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+}
+
+.hero-text,
+.sub-text {
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-text {
+    font-size: 3.5rem;
+    margin-top: 1em;
+}
+
+.sub-text {
+    font-size: 2rem;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    padding: 4em 0;
+
+    background-color: var(--form-background);
+    box-shadow: 4px 4px 8px #0003, 1px 1px 5px #0003;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    border: none;
+}
+
+.name-section,
+.contact-section,
+.password-section {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.label-text {
+    font-size: 1.5rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'] {
+    width: calc(100vw - 80vw);
+    height: 2.5em;
+    padding: 1rem;
+
+    background: var(--background-color);
+    outline: none;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+.create-btn {
+    border: none;
+    border-radius: 0.5em;
+
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--btn-color);
+    color: var(--font-color);
+    padding: 1em 2.5em;
+
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.create-btn:active {
+    transform: scale(.98);
+}
+
+.create-btn:hover {
+    background-color: var(--btn-hover-state);
+}
+
+.existing-account-section {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.existing-account-text {
+    font-size: 1.4rem;
+}
+
+#log-in-url {
+    color: var(--log-in-color);
+    text-decoration: none;
+}
+
+#log-in-url:hover {
+    color: var(--log-in-hover-state);
+}
+
+/* FORM SECTION END */
+
+/* BRANDING SECTION START */
+
+.branding-container {
+    width: var(--branding-section);
+    border-top-left-radius: 4em;
+    border-bottom-left-radius: 4em;
+
+    background-image: url(./images/nasa-image.jpg);
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.branding-wrapper {
+    background-color: var(--title-container);
+    width: 100%;
+    height: clamp(10em, 100% , 15em);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+.branding-text {
+    color: var(--font-color);
+    font-size: 3rem;
+}
+
+.logo-image {
+    width: min(100px, 100%);
+    height: min(100px, 100%);
+}
+
+/* BRANDING SECTION END */
