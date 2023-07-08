@@ -20,6 +20,24 @@ inputEmailEl.forEach((e) => {
     e.addEventListener('input', validateInput(e))
 })
 
-inputPasswordEl.forEach((e) => {
-    e.addEventListener('input', validateInput(e))
-})
+const passwordEl = document.querySelector('#password')
+const confirmPasswordEl = document.querySelector('#confirm-password')
+
+function validatePassword() {
+    if ((passwordEl.value === '' && confirmPasswordEl.value === '') && (passwordEl.value === confirmPasswordEl.value)) {
+        confirmPasswordEl.style.border = 'none'
+        passwordEl.style.border = 'none'
+
+    } else if ((passwordEl.value !== '' && confirmPasswordEl.value !== '') && (passwordEl.value === confirmPasswordEl.value)) {
+        confirmPasswordEl.style.border = '1px solid #0aef52'
+        passwordEl.style.border = '1px solid #0aef52'
+
+    } else if ((passwordEl.value !== '' && confirmPasswordEl.value !== '') && (passwordEl.value !== confirmPasswordEl.value)) {
+        confirmPasswordEl.style.border = '1px solid #ef0000'
+        passwordEl.style.border = '1px solid #ef0000'
+    }
+}
+
+passwordEl.addEventListener('input', validatePassword)
+confirmPasswordEl.addEventListener('input', validatePassword)
+
